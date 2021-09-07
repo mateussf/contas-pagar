@@ -9,4 +9,6 @@ class ContasPagarModel extends Model
 {
     use HasFactory;
     protected $table = "contas_pagar";
+    public $timestamps = true;
+
 }

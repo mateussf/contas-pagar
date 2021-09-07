@@ -19,4 +19,10 @@ Route::get('/', function () {
 });
 
 
-Route::get('/contas', [ContasPagarController::class, 'Listar']);
+Route::get('/contas', [ContasPagarController::class, 'Listar'])->name('contas.listar');
+Route::post('/contas/salvar', [ContasPagarController::class, 'salvar'])->name('contas.salvar');
+Route::get('/contas/cadastro', [ContasPagarController::class, 'cadastro'])->name("contas.cadastrar");
+Route::get('/contas/editar/{id}', [ContasPagarController::class, 'editar'])->name("contas.editar");
+Route::post('/contas/update/{id}', [ContasPagarController::class, 'update'])->name("contas.update");
+
+Route::get('/contas/apagar/{id}', [ContasPagarController::class, 'apagar'])->name("contas.apagar");
